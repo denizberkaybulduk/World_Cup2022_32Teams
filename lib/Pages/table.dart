@@ -32,31 +32,11 @@ class TablePage extends StatelessWidget {
 
   Container Body(BuildContext context) {
     return Container(
-      child: showTable(findOrder(wc2022.GroupA))
+      child: showTable(wc2022.GroupA)
     );
   }
 
-  List<Team> findOrder(List<Team> group) {
-    List<Team> teams = [];
-    List gecici = [
-      group[0].team_points,
-      group[1].team_points,
-      group[2].team_points,
-      group[3].team_points
-    ];
-    gecici.sort();
-    int indexA = gecici.indexOf(group[0].team_points);
-    int indexB = gecici.indexOf(group[1].team_points);
-    int indexC = gecici.indexOf(group[2].team_points);
-    int indexD = gecici.indexOf(group[3].team_points);
-    teams[indexA] = group[0];
-    teams[indexB] = group[1];
-    teams[indexC] = group[2];
-    teams[indexD] = group[3];
-    
-
-    return teams;
-  }
+  
 
   showTable(List<Team> a) {
     return Container(
